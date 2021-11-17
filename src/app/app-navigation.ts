@@ -25,6 +25,10 @@ export const navigation = [
       {
         text: 'Days of office',
         path: '/daysoffice'
+      },
+      {
+        text: 'Add day',
+        path: '/daysoffice/addday'
       }
     ]
   }
