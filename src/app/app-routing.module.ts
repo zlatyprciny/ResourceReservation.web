@@ -43,6 +43,7 @@ const routes: Routes = [
     component: ChangePasswordFormComponent,
     canActivate: [ AuthGuardService ]
   },
+  { path: 'daysoffice', loadChildren: () => import('./days-office/days-office.module').then(m => m.DaysOfficeModule) },
   {
     path: '**',
     redirectTo: 'home'

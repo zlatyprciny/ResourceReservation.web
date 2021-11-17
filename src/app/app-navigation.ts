@@ -17,5 +17,15 @@ export const navigation = [
         path: '/tasks'
       }
     ]
+  },
+  {
+    text: 'Maintenace',
+    icon: 'folder',
+    items: [
+      {
+        text: 'Days of office',
+        path: '/daysoffice'
+      }
+    ]
   }
 ];
