@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+/* NgRx */
+import { Store } from '@ngrx/store';
+import { State } from './state';
+
+import { DaysOfficePageActions } from './state/actions';
 
 @Component({
   selector: 'app-days-office',
@@ -7,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DaysOfficeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<State>) { }
 
   ngOnInit(): void {
+    this.store.dispatch(DaysOfficePageActions.loadOffices());
   }
 
 }
