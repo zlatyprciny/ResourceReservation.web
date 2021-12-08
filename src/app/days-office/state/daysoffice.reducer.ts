@@ -1,15 +1,14 @@
-import { Office } from 'src/app/shared/models/ambulatory/office';
 import { DaysOfficePageActions } from './actions';
 //NgRx
 import { createReducer, on } from '@ngrx/store';
-import { state } from '@angular/animations';
+import { DaysOffice } from '../daysoffice';
 
 export interface DaysOfficeState {
-  CurrentOffice: Office | null;
+  daysOffices: DaysOffice[]
 }
 
 const initialState: DaysOfficeState = {
-  CurrentOffice: null,
+  daysOffices: []
 };
 
 export const daysOfficeFeatureKey = 'daysOffice';
