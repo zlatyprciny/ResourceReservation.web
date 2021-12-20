@@ -3,9 +3,10 @@ import { Observable } from 'rxjs';
 /* NgRx */
 import { Store } from '@ngrx/store';
 import { DaysOffice } from './daysoffice';
-import { getDaysOffice, State } from './state';
+import { getDaysOffice, getOffices, State } from './state';
 
 import { DaysOfficePageActions } from './state/actions';
+import { Office } from '../shared/models/ambulatory/office';
 
 @Component({
   selector: 'app-days-office',
@@ -13,17 +14,14 @@ import { DaysOfficePageActions } from './state/actions';
   styleUrls: ['./days-office.component.scss'],
 })
 export class DaysOfficeComponent implements OnInit {
-  daysOffice$!: Observable<DaysOffice[]>;
-  daysOffice: DaysOffice[] = [];
+  offices$!: Observable<Office[]>;
+  offices: Office[] = [];
   constructor(private store: Store<State>) {}
 
   ngOnInit(): void {
-    this.daysOffice$ = this.store.select(getDaysOffice);
-
+    this.offices$ = this.store.select(getOffices);
     this.store.dispatch(DaysOfficePageActions.loadOffices());
-    this.daysOffice$.subscribe(
-      (daysOffice) => (this.daysOffice = daysOffice)
-    );
+    this.offices$.subscribe((offices) => (this.offices = offices));
   }
 
   // ngOnDestroy() {
