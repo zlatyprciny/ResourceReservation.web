@@ -1,1 +1,14 @@
-<p>days-office works!</p>
+<h2 class="content-block">Work Days of Office Maintenance</h2>
+
+<dx-data-grid class="dx-card wide-card"
+  [dataSource]="daysOffice"
+  keyExpr="id"
+  [columns]="['id', 'name']"
+  [showBorders]="false"
+  [focusedRowEnabled]="true"
+  [focusedRowIndex]="0"
+  [columnAutoWidth]="true"
+  [columnHidingEnabled]="true">
+
+</dx-data-grid>
+

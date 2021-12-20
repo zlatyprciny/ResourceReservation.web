@@ -10,4 +10,9 @@ export interface State extends AppState.State {
 
 const getProductFeatureState = createFeatureSelector<DaysOfficeState>(daysOfficeFeatureKey);
 
+export const getDaysOffice = createSelector(
+  getProductFeatureState,
+  state => state.daysOffices
+);
+
 
