@@ -22,4 +22,12 @@ export class DaysOfficeComponent implements OnInit {
     this.store.dispatch(DaysOfficePageActions.loadOffices());
   }
 
+  onOfficeChanged(office: Office) {
+    console.warn(
+      `Office day: saving ID office ${office.id} has been selected.`
+    );
+    this.store.dispatch(
+      DaysOfficePageActions.OfficeChanged({ currentOfficeId: office.id })
+    );
+  }
 }

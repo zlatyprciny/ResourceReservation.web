@@ -14,10 +14,10 @@ export class OfficeListComponent implements OnInit {
   }
 
   @Input() officeList: any ;
-  @Output() officeWasSelected = new EventEmitter<Office>();
+  @Output() onOfficeChanged = new EventEmitter<Office>();
 
 
   onFocusedRowChanged(e: any) {
-    this.officeWasSelected.emit(e.row.data as Office);
+    this.onOfficeChanged.emit(e.row.data as Office);
   }
 }

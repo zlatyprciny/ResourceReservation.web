@@ -1,3 +1,3 @@
 <h2 class="content-block">Work Days of Office Maintenance</h2>
 
-<pm-office-list [officeList]="offices$ | async"> </pm-office-list>
+<pm-office-list [officeList]="offices$ | async" (onOfficeChanged)="onOfficeChanged($event)" > </pm-office-list>
