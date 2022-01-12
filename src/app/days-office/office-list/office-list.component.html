@@ -1,0 +1,12 @@
+<dx-data-grid
+  class="dx-card wide-card"
+  [dataSource]="officeList"
+  keyExpr="id"
+  [showBorders]="false"
+  [focusedRowEnabled]="true"
+  [focusedRowIndex]="0"
+  (onFocusedRowChanged)="onFocusedRowChanged($event)"
+  [columnHidingEnabled]="true"
+>
+  <dxi-column dataField="OfficeName" [width]="200"></dxi-column>
+</dx-data-grid>

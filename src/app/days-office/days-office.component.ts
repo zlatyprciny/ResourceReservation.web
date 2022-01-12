@@ -14,17 +14,12 @@ import { Office } from '../shared/models/ambulatory/office';
   styleUrls: ['./days-office.component.scss'],
 })
 export class DaysOfficeComponent implements OnInit {
-  offices$!: Observable<Office[]>;
-  offices: Office[] = [];
+  offices$: Observable<Office[]>;
   constructor(private store: Store<State>) {}
 
   ngOnInit(): void {
     this.offices$ = this.store.select(getOffices);
     this.store.dispatch(DaysOfficePageActions.loadOffices());
-    this.offices$.subscribe((offices) => (this.offices = offices));
   }
 
-  // ngOnDestroy() {
-  //   this.daysOffice$.unsubscribe();
-  // }
 }
