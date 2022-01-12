@@ -10,12 +10,14 @@ import { DaysOfficeEffects } from './state/daysoffice.effect';
 import * as fromDaysOffice from './state/daysoffice.reducer'
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { OfficeListComponent } from './office-list/office-list.component';
+import { DayListComponent } from './day-list/day-list.component';
 
 @NgModule({
   declarations: [
     DaysOfficeComponent,
     AddDayComponent,
-    OfficeListComponent
+    OfficeListComponent,
+    DayListComponent
   ],
   imports: [
     CommonModule,
