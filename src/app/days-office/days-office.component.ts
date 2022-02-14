@@ -15,6 +15,7 @@ import { Office } from '../shared/models/ambulatory/office';
 })
 export class DaysOfficeComponent implements OnInit {
   offices$: Observable<Office[]>;
+  days$: Observable<DaysOffice[]>;
   constructor(private store: Store<State>) {}
 
   ngOnInit(): void {
