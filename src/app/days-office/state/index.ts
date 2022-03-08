@@ -1,3 +1,4 @@
+import { state } from '@angular/animations';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { Office } from 'src/app/shared/models/ambulatory/office';
 import * as AppState from '../../state/app.state';
@@ -7,18 +8,25 @@ export interface State extends AppState.State {
   daysOffices: DaysOfficeState;
 }
 
-const getProductFeatureState =
+const getDaysOfficeFeatureState =
   createFeatureSelector<DaysOfficeState>(daysOfficeFeatureKey);
 
 export const getDaysOffice = createSelector(
-  getProductFeatureState,
+  getDaysOfficeFeatureState,
   (state) => state.daysOffices
 );
 
 export const getOffices = createSelector(getDaysOffice, (daysOffices) => {
-  let offices: Office[] = [];
-  daysOffices.map((day) => offices.push(day.office));
-  return offices;
+  return  daysOffices.map((day) =>  day.office);
 });
+
+export const getDaysByOffice = createSelector(
+  getDaysOfficeFeatureState,
+  (state)=>  state.daysOffices
+            .filter(day =>  day.office.id === state.currentOfficeId)
+            .shift()
+            ?.days
+
+);
 
 
