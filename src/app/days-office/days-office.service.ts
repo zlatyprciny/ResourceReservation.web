@@ -15,7 +15,10 @@ export class DaysOfficeService {
           id: 1,
           OfficeName: 'MUDr Uhlikova',
         },
-        days:  [{id: 1, dayOfWeek:"Monday"}]
+        days: [
+          { id: 1, dayOfWeek: 'Monday' },
+          { id: 2, dayOfWeek: 'Tuesday' },
+        ],
       },
       {
         id: 2,
@@ -24,7 +27,7 @@ export class DaysOfficeService {
           id: 2,
           OfficeName: 'MUDr Hajcmanova',
         },
-        days: [{id:2, dayOfWeek:"Thursday"}]
+        days: [{ id: 2, dayOfWeek: 'Thursday' }],
       },
     ]);
   }

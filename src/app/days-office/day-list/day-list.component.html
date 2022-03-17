@@ -1,1 +1,3 @@
-<div *ngFor="let day of dayList" >{{day.dayOfWeek}}</div>
+<div *ngFor="let day of dayList">
+  <dm-day-summary [dayOffice]="day"></dm-day-summary>
+</div>
