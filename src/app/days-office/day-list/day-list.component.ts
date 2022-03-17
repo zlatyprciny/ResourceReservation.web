@@ -7,7 +7,7 @@ import { DayOffice } from '../day-office';
   styleUrls: ['./day-list.component.scss'],
 })
 export class DayListComponent implements OnInit {
-  @Input() dayList: DayOffice[];
+  @Input() dayList: DayOffice[]| null;
   constructor() {}
 
   ngOnInit(): void {}
