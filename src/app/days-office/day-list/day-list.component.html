@@ -1,3 +1,5 @@
-<div *ngFor="let day of dayList">
-  <dm-day-summary [dayOffice]="day"></dm-day-summary>
-</div>
+<ul class="surveys grid">
+  <li *ngFor="let day of dayList" class="survey-item">
+    <dm-day-summary [dayOffice]="day"></dm-day-summary>
+  </li>
+</ul>
