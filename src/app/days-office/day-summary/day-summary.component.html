@@ -1,4 +1,11 @@
-<span class="survey-name">
+<span  class="survey-name">
   {{dayOffice.dayOfWeek}}
+  <dx-button id="menu" (onClick)="menuClick()" icon="menu"> </dx-button>
 </span>
-
+<dx-context-menu
+  [dataSource]="dataSource"
+  [width]="200"
+  target="#menu"
+  [visible]="isContextMenuVisible"
+  (onItemClick)="itemClick($event)"
+>
