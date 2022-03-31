@@ -1,7 +1,15 @@
-<span  class="survey-name">
-  {{dayOffice.dayOfWeek}}
+<span class="survey-name">
+  {{ dayOffice.dayOfWeek }}
   <dx-button id="menu" (onClick)="menuClick()" icon="menu"> </dx-button>
 </span>
+<div class="pull-right">
+  <span class="survey-stage">
+    <span class="stage draft">Draft</span>
+    <span class="stage awarded">Awarded</span>
+    <span class="stage live">Live</span>
+    <span class="stage ended active">Ended</span>
+  </span>
+</div>
 <dx-context-menu
   [dataSource]="dataSource"
   [width]="200"
@@ -9,3 +17,4 @@
   [visible]="isContextMenuVisible"
   (onItemClick)="itemClick($event)"
 >
+</dx-context-menu>

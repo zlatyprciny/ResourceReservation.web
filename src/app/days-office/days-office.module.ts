@@ -8,7 +8,7 @@ import { DaysOfficeComponent } from './days-office.component';
 import { AddDayComponent } from './add-day/add-day.component';
 import { DaysOfficeEffects } from './state/daysoffice.effect';
 import * as fromDaysOffice from './state/daysoffice.reducer'
-import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import { DxDataGridModule, DxContextMenuModule, DxTemplateModule, DxButtonModule } from 'devextreme-angular';
 import { OfficeListComponent } from './office-list/office-list.component';
 import { DayListComponent } from './day-list/day-list.component';
 import { DaySummaryComponent } from './day-summary/day-summary.component';
@@ -25,6 +25,9 @@ import { DaySummaryComponent } from './day-summary/day-summary.component';
     CommonModule,
     DaysOfficeRoutingModule,
     DxDataGridModule,
+    DxContextMenuModule,
+    DxTemplateModule,
+    DxButtonModule,
     StoreModule.forFeature(fromDaysOffice.daysOfficeFeatureKey,fromDaysOffice.daysOfficeReducer),
     EffectsModule.forFeature([DaysOfficeEffects])
   ]
