@@ -1,20 +1,19 @@
 <span class="survey-name">
   {{ dayOffice.dayOfWeek }}
-  <dx-button id="menu" (onClick)="menuClick()" icon="menu"> </dx-button>
 </span>
-<div class="pull-right">
-  <span class="survey-stage">
-    <span class="stage draft">Draft</span>
-    <span class="stage awarded">Awarded</span>
-    <span class="stage live">Live</span>
-    <span class="stage ended active">Ended</span>
-  </span>
-</div>
+<span class="menu">
+  <dx-button id="menu" icon="overflow"> </dx-button>
+</span>
 <dx-context-menu
   [dataSource]="dataSource"
   [width]="200"
   target="#menu"
-  [visible]="isContextMenuVisible"
   (onItemClick)="itemClick($event)"
 >
+<div *dxTemplate="let e of 'item'">
+  <div>
+    <span [ngClass]="e.icon"></span>
+    <span *ngIf="e.items" class="dx-icon-spinright"></span> {{ e.text }}
+  </div>
+</div>
 </dx-context-menu>
